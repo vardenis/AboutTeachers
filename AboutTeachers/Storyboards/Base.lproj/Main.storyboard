@@ -40,6 +40,10 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Log In">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="accessCheck" destination="BYZ-38-t0r" eventType="touchUpInside" id="8GD-Vp-oOh"/>
+                                            <segue destination="MXe-ep-qOh" kind="presentation" identifier="showWelcomeVC" modalPresentationStyle="fullScreen" id="tfL-3n-0Jz"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="eqD-VU-cx2">
                                         <rect key="frame" x="0.0" y="147" width="335" height="31"/>
@@ -48,11 +52,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?"/>
+                                                <connections>
+                                                    <action selector="showUserName" destination="BYZ-38-t0r" eventType="touchUpInside" id="gO1-2U-X0B"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDS-Wl-IdV">
                                                 <rect key="frame" x="178" y="0.0" width="157" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                                <connections>
+                                                    <action selector="showPassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKp-1m-FMA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -67,10 +77,44 @@
                             <constraint firstItem="JfD-ty-l4J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="nwv-QF-Lqd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTF" destination="9Lf-vD-nhF" id="Pvz-51-dDU"/>
+                        <outlet property="userNameTF" destination="zgT-ia-ORr" id="UGx-43-Jr1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
+            <point key="canvasLocation" x="-118" y="72"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="057-cE-bZd">
+            <objects>
+                <viewController id="MXe-ep-qOh" customClass="WelcomeViewController" customModule="AboutTeachers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="28a-SP-6YS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sks-aJ-aOb">
+                                <rect key="frame" x="156.5" y="50" width="62" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nt0-cH-3W7"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="Sks-aJ-aOb" firstAttribute="top" secondItem="Nt0-cH-3W7" secondAttribute="top" constant="50" id="I4w-4L-ZtN"/>
+                            <constraint firstItem="Sks-aJ-aOb" firstAttribute="centerX" secondItem="28a-SP-6YS" secondAttribute="centerX" id="meH-YB-Ho6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="personName" destination="Sks-aJ-aOb" id="MTA-Ln-2BV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="miY-QR-IXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="72"/>
         </scene>
     </scenes>
     <resources>

@@ -7,23 +7,88 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var userNameTF: UITextField!
+    @IBOutlet var passwordTF: UITextField!
+    
+    private var userID: Int?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        userNameTF.delegate = self
+        userNameTF.returnKeyType = .next
+        
+        passwordTF.delegate = self
+        passwordTF.returnKeyType = .done
+        
+        addTapGestureToHideKeyboard()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        
+        welcomeVC.userID = userID
     }
-    */
+    
+    @IBAction func accessCheck() {
+        let userID = userIDDefinition(
+            userName: userNameTF.text,
+            password: passwordTF.text)
+    
+        if userID == nil {
+            showAlert(
+                title: "Invalid login or password",
+                massage: "Enter correct username or password")
+        } else {
+            self.userID = userID
+        }
+                
+    }
+    
+    @IBAction func showUserName() {
+        showAlert(
+            title: "Reminder",
+            massage: "Existing usernames: \(existingUserNames())")
+    }
+    
+    @IBAction func showPassword() {
+        showAlert(
+            title: "Reminder",
+            massage: "User passwords: \(personPasswords())")
+    }
 
+}
+
+// MARK: - Private Methods
+extension LoginViewController {
+    private func showAlert(title: String, massage: String) {
+        let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTF.text = ""
+        }
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - Keyboard Methods
+extension LoginViewController {
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTF {
+            passwordTF.becomeFirstResponder()
+        } else if textField == passwordTF {
+            accessCheck()
+            performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+        }
+        return true
+    }
+    
+    private func addTapGestureToHideKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
+        view.addGestureRecognizer(tapGesture)
+    }
 }

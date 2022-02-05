@@ -14,6 +14,7 @@
 		92C2FF1E27AE8C26006153DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C2FF1C27AE8C26006153DA /* LaunchScreen.storyboard */; };
 		92C2FF2B27AE8CDD006153DA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2FF2A27AE8CDD006153DA /* LoginViewController.swift */; };
 		92C2FF2D27AE8E4A006153DA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2FF2C27AE8E4A006153DA /* Person.swift */; };
+		92C2FF2F27AEF2D7006153DA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2FF2E27AEF2D7006153DA /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		92C2FF1F27AE8C26006153DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C2FF2A27AE8CDD006153DA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92C2FF2C27AE8E4A006153DA /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		92C2FF2E27AEF2D7006153DA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				92C2FF2A27AE8CDD006153DA /* LoginViewController.swift */,
+				92C2FF2E27AEF2D7006153DA /* WelcomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C2FF2B27AE8CDD006153DA /* LoginViewController.swift in Sources */,
+				92C2FF2F27AEF2D7006153DA /* WelcomeViewController.swift in Sources */,
 				92C2FF1227AE8C20006153DA /* AppDelegate.swift in Sources */,
 				92C2FF2D27AE8E4A006153DA /* Person.swift in Sources */,
 				92C2FF1427AE8C20006153DA /* SceneDelegate.swift in Sources */,
