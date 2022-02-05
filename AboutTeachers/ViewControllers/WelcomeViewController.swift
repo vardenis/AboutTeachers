@@ -18,7 +18,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         if userID == nil {
-            userID = 0
+            personName.text = ""
         }else {
             let person = informationOnPerson(userID: userID)
             personName.text = person?.name
