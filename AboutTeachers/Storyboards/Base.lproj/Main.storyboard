@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="JfD-ty-l4J">
-                                <rect key="frame" x="20" y="246.5" width="335" height="174"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JfD-ty-l4J">
+                                <rect key="frame" x="20" y="244.5" width="335" height="178"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yLb-lf-oJM">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="88"/>
@@ -35,14 +35,14 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJR-bW-b0K">
-                                        <rect key="frame" x="0.0" y="94" width="335" height="43"/>
+                                        <rect key="frame" x="0.0" y="96" width="335" height="43"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Log In">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
                                         </buttonConfiguration>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="eqD-VU-cx2">
-                                        <rect key="frame" x="0.0" y="143" width="335" height="31"/>
+                                        <rect key="frame" x="0.0" y="147" width="335" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ym-Fw-QwD">
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="31"/>
