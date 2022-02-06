@@ -28,9 +28,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
         
-        welcomeVC.personID = personID
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.personID = personID
+            }else if let navigationVC = viewController as? UINavigationController {
+                let personInformationVC = navigationVC.topViewController as! PersonInformationViewController
+                personInformationVC.personID = personID
+            }
+        }
     }
     
     @IBAction func accessCheck() {
@@ -58,6 +66,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         showAlert(
             title: "Reminder",
             massage: "User passwords: \(userPasswords())")
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTF.text = ""
+        passwordTF.text = ""
     }
 
 }

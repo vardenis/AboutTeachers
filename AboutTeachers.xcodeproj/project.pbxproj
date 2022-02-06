@@ -16,6 +16,8 @@
 		92C2FF2D27AE8E4A006153DA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2FF2C27AE8E4A006153DA /* Person.swift */; };
 		92C2FF2F27AEF2D7006153DA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2FF2E27AEF2D7006153DA /* WelcomeViewController.swift */; };
 		92C2FF3127AFAC1F006153DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2FF3027AFAC1F006153DA /* User.swift */; };
+		92FF1DA227B0207900F968D1 /* PersonInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FF1DA127B0207900F968D1 /* PersonInformationViewController.swift */; };
+		92FF1DA627B03F4C00F968D1 /* PersonImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FF1DA527B03F4C00F968D1 /* PersonImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		92C2FF2C27AE8E4A006153DA /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		92C2FF2E27AEF2D7006153DA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		92C2FF3027AFAC1F006153DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		92FF1DA127B0207900F968D1 /* PersonInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationViewController.swift; sourceTree = "<group>"; };
+		92FF1DA527B03F4C00F968D1 /* PersonImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			children = (
 				92C2FF2A27AE8CDD006153DA /* LoginViewController.swift */,
 				92C2FF2E27AEF2D7006153DA /* WelcomeViewController.swift */,
+				92FF1DA127B0207900F968D1 /* PersonInformationViewController.swift */,
+				92FF1DA527B03F4C00F968D1 /* PersonImageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,8 +196,10 @@
 				92C2FF2B27AE8CDD006153DA /* LoginViewController.swift in Sources */,
 				92C2FF2F27AEF2D7006153DA /* WelcomeViewController.swift in Sources */,
 				92C2FF3127AFAC1F006153DA /* User.swift in Sources */,
+				92FF1DA627B03F4C00F968D1 /* PersonImageViewController.swift in Sources */,
 				92C2FF1227AE8C20006153DA /* AppDelegate.swift in Sources */,
 				92C2FF2D27AE8E4A006153DA /* Person.swift in Sources */,
+				92FF1DA227B0207900F968D1 /* PersonInformationViewController.swift in Sources */,
 				92C2FF1427AE8C20006153DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
