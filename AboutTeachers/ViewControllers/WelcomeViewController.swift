@@ -11,16 +11,16 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet var personName: UILabel!
     
-    var userID: Int!
+    var personID: Int!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if userID == nil {
+        if personID == nil {
             personName.text = ""
         }else {
-            let person = informationOnPerson(userID: userID)
+            let person = informationOnPerson(personID: personID)
             personName.text = person?.name
         }
   

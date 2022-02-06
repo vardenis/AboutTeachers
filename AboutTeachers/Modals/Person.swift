@@ -6,51 +6,34 @@
 //
 
 struct Person {
-    let userID: Int
-    let userName: String
-    let password: String
+    let personID: Int
+    let user: User
     let name: String
     
     static func informationAboutPerson() -> [Person] {
         [
             Person(
-                userID: 123,
-                userName: "Denis",
-                password: "Denis",
-                name: "Денис"),
+                personID: 123,
+                user: User(userName: "Denis", password: "Denis"),
+                name: "Denis"),
             Person(
-                userID: 777,
-                userName: "Alexey",
-                password: "Efimov",
+                personID: 777,
+                user: User(userName: "Alexey", password: "Efimov"),
                 name: "Алексей"),
             Person(
-                userID: 333,
-                userName: "Eugenya",
-                password: "Bruyko",
+                personID: 333,
+                user: User(userName: "Eugenya", password: "Bruyko"),
                 name: "Евгения")
         ]
     }
 }
 
-func userIDDefinition(userName: String?, password: String?) -> Int?{
-    let personsBD = Person.informationAboutPerson()
-    var userID: Int?
-    
-    for person in personsBD {
-        if person.userName == userName && person.password == password {
-            userID = person.userID
-            break
-        }
-    }
-    return userID
-}
-
-func informationOnPerson(userID: Int) -> Person?{
+func informationOnPerson(personID: Int) -> Person?{
     let personsBD = Person.informationAboutPerson()
     var personInformation: Person?
     
     for person in personsBD {
-        if person.userID == userID {
+        if person.personID == personID {
             personInformation = person
             break
         }
@@ -59,37 +42,3 @@ func informationOnPerson(userID: Int) -> Person?{
     return personInformation
 }
 
-func existingUserNames() -> String {
-    let personInfo = Person.informationAboutPerson()
-    var usersName = ""
-    var cycleStart = true
-    
-    for person in personInfo {
-        if cycleStart {
-            usersName = "\(person.userName)"
-            cycleStart = false
-        }else {
-            usersName = "\(usersName), \(person.userName)"
-        }
-    }
-    
-    return usersName
-}
-
-
-func personPasswords() -> String{
-    let personInfo = Person.informationAboutPerson()
-    var personPasswords = ""
-    var cycleStart = true
-
-    for person in personInfo {
-        if cycleStart {
-            personPasswords = "User Name: \(person.userName) - Password: \(person.password)"
-            cycleStart = false
-        }else {
-            personPasswords = "\(personPasswords); User Name: \(person.userName) - Password: \(person.password)"
-        }
-    }
-    
-    return personPasswords
-}

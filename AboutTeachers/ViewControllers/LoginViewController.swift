@@ -12,7 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private var userID: Int?
+    private var personID: Int?
     
     
     override func viewDidLoad() {
@@ -30,20 +30,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         
-        welcomeVC.userID = userID
+        welcomeVC.personID = personID
     }
     
     @IBAction func accessCheck() {
-        let userID = userIDDefinition(
+        let personID = userIDDefinition(
             userName: userNameTF.text,
             password: passwordTF.text)
     
-        if userID == nil {
+        if personID == nil {
             showAlert(
                 title: "Invalid login or password",
                 massage: "Enter correct username or password")
         } else {
-            self.userID = userID
+            self.personID = personID
         }
                 
     }
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func showPassword() {
         showAlert(
             title: "Reminder",
-            massage: "User passwords: \(personPasswords())")
+            massage: "User passwords: \(userPasswords())")
     }
 
 }
